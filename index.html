@@ -4,20 +4,103 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
 
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+<!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+
+    <!-- Moment.js Reference -->
+    <!-- <script src="http://momentjs.com/downloads/moment.js"></script>   -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </head>
 <body>
 
-	<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+<div class="container">
 
-    <!-- Moment.js Reference -->
-    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+      <!-- Jumbotron -->
+      <div class="jumbotron" style="background-color: black; color: white">
+        <h1 class="text-center">Three Amigos !!!</h1>
+        <h3 class="text-center">Hop Onboard !!</h3>
+        <h4 class="text-center">Current Time: <span id="current-time"></span></h4>
 
+        
+
+      </div>
+
+        <form id="search-events-form">
+          <label for="search-events">Search events</label>
+          <input id="search-events-input" type="text">
+          <input id="search-events" type="submit" name="Submit">
+        </form>
+
+      <div class="row">
+
+        <div class="col-lg-12">
+
+        <!-- Current Employees-->
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title"><strong>Event List</strong></h3>
+            </div>
+            <div class="panel-body">
+              <table class="table table-hover" id="event-table">
+                <thead>
+                  <tr>
+                    <th>Event Name</th>
+                    <th>Location</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Url</th>                    
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
+   
+
+    <div id=event-list>Events:  
+        <div id=event-name></div>
+        <div id=location>Location:  </div>
+        <div id=date>Date:  </div>
+        <div id=time>Time:  </div>
+
+    </div> 
+     
+    
+
+
+<!-- SPOTIFY SEARCH AREA -->
+<!-- <div class="container">
+    <h1>Search for an Artist</h1>
+    <p>Type an artist name and click on "Search". Then, click on any album from the results to play 30 seconds of its first track.</p>
+    <form id="search-form">
+        <input type="text" id="query" value="" class="form-control" placeholder="Type an Artist Name"/>
+        <input type="submit" id="search" class="btn btn-primary" value="Search" />
+    </form>
+    <div id="results"></div>
+</div>
+<script id="results-template" type="text/x-handlebars-template">
+    {{#each albums.items}}
+    <div style="background-image:url({{images.0.url}})" data-album-id="{{id}}" class="cover"></div>
+    {{/each}}
+</script> -->
+<!-- END OF SPOTIFY API SEARCH AREA -->
+
+
+
+	
 	<footer>
           <h5>&copy 2017 Three Amigos</h5>
     </footer>
@@ -25,6 +108,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 	<script type="text/javascript" src="assets/javascript/logic.js"></script>
+
+
+
 	
 </body>
 </html>
