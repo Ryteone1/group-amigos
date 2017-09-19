@@ -7,35 +7,29 @@
 //      display Gifs.  Pretty much, it would be like the size of an ad area to the right that many websites have
 // - the gifs will be playing on the right, while the user can view the search results on the left.
 
-$(document).ready(function() {
 
-// clicking submit on a new search should execute a function that will allow us to capture the search term and store it in a variable
-// var person.
-$("#search-events").on("click", function(event) {
-  event.preventDefault();
 
-// Need var person should be equal to the search term the user entered.  We should then be able to integrate var person into the 
-// queryURL so that the user can search for new events. THIS IS CURRENTLY NOT WORKING.  I CAN GET IT TO WORK IF I 
-// MANUALLY SET VAR PERSON.  IF YOU COMMENT OUT var person = $(this).html();
-// AND UNCOMMENT var person = "shakira", you will see that the proper results get displayed.
+  var queryTerm = "";
+	var queryURLBase = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=NdH7ttoqHEznKuGMVdBINJqbG8r9w1Kk&keyword=";
 
-  var person = $(this).html();
+  $("#search-events-btn").on("click", function(event) {
+        event.preventDefault();
+      
+        queryTerm = $("#search-events-input").val().trim();
+        console.log(queryTerm);
+        var queryURL = queryURLBase + queryTerm;
+        console.log(queryURL);         
 
-  // var person = "shakira";
-  console.log(this);
-	var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=NdH7ttoqHEznKuGMVdBINJqbG8r9w1Kk&keyword=" + person;
 
 $.ajax({
       url: queryURL,
       method: "GET"
     }).done(function(response) {
       console.log(response); 
-      // console.log(response._embedded.events[0].images);
-      // console.log(response._embedded.events[0].dates.start.localDate);
-      console.log(response._embedded.events);    
-
-      
-      // var eventList = $("#event-list");
+      console.log(response._embedded.events);  
+  
+    
+     
       var events = response._embedded.events;  
 
       $("#event-name").empty();
@@ -53,20 +47,22 @@ $.ajax({
 
         $("#event-name").append(eventName, location, date, time, url, "<br>"); 
 
-
+        
 
       };
-     });
 
-     
-    });
+      });
 
-});
+      
+     });   
+
 
 // END OF WORKING CODE FOR TICKETMASTER
 
-    
-// TRIVIA DATABASE API
+
+
+// ==============================================================================================================    
+// POSSIBLE TRIVIA DATABASE API
 // TRIVIA DATABASE - WAS WORKING BUT NOW ARRAY WONT DISPLAY
 //     var queryURL = "https://opentdb.com/api.php?amount=10&category=26&difficulty=easy";
 
@@ -86,7 +82,8 @@ $.ajax({
 
 
 
-// SPOTIFY API
+// ============================================================================================================
+// POSSIBLE SPOTIFY API
 //  var queryURL = "https://api.spotify.com/v1/albums?ids=382ObEPsp2rxGrnsizN5TX,1A2GTWGtFfWp7KSQTwWOyo,2noRn2Aes5aoNVsU6iWThc&market=ES HTTP/1.1"
 //  person = "james+bay";
 
