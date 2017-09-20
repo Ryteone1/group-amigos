@@ -59,7 +59,7 @@ $.ajax({
         // var queryURL = queryURLBase + queryTerm;
         // console.log(queryURL); 
 
-        var queryURLGiphy = "https://api.giphy.com/v1/gifs/search?q=" + queryTerm + "&api_key=55fa83da04e04a38b28a997d9d79f784&limit=10";
+        var queryURLGiphy = "https://api.giphy.com/v1/gifs/search?q=" + queryTerm + "&api_key=55fa83da04e04a38b28a997d9d79f784&limit=6";
 
     $.ajax({
       url: queryURLGiphy,
@@ -75,17 +75,29 @@ $.ajax({
             var gifDiv = $("<div>");
             var gifImage = results[j].images.fixed_height.url;
             var still = results[j].images.fixed_height_still.url;
-            var politicianImage = $("<img>").attr("src", still).attr("data-animate", gifImage).attr("data-still", still);
-            politicianImage.attr("data-state", "still");
-      $("#gifsArea").prepend(politicianImage);
-      politicianImage.on("click", playsGif);
+            var gifs = $("<img>").attr("src", still).attr("data-animate", gifImage).attr("data-still", still);
+            gifs.attr("data-state", "still");
+      $("#gifsArea").prepend(gifs);
+      gifs.on("click", playsGif);
 
           var rating = results[j].rating;
           var p = $("<p>").text("Rating: " + rating);
       $("#gifsArea").prepend(p);
-      $("#gifsArea").prepend(politicianImage);
+      $("#gifsArea").prepend(gifs);
 
       }
+
+      function playsGif() {
+      var state = $(this).attr("data-state");
+          
+      if (state == "still") {
+        $(this).attr("src", $(this).data("animate"));
+        $(this).attr("data-state", "animate");
+      } else {
+        $(this).attr("src", $(this).data("still"));
+        $(this).attr("data-state", "still");
+      }
+    }
 
     });
       
