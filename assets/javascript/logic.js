@@ -8,6 +8,8 @@
 // - the gifs will be playing on the right, while the user can view the search results on the left.
 
 
+// ===================================================================================================================
+// TICKETMASTER API AND AJAX CALL
 
   var queryTerm = "";
 	var queryURLBase = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=NdH7ttoqHEznKuGMVdBINJqbG8r9w1Kk&keyword=";
@@ -18,16 +20,14 @@
         queryTerm = $("#search-events-input").val().trim();
         console.log(queryTerm);
         var queryURL = queryURLBase + queryTerm;
-        console.log(queryURL);         
-
+        console.log(queryURL); 
 
 $.ajax({
       url: queryURL,
       method: "GET"
     }).done(function(response) {
       console.log(response); 
-      console.log(response._embedded.events);  
-  
+      console.log(response._embedded.events);   
     
      
       var events = response._embedded.events;  
@@ -52,7 +52,42 @@ $.ajax({
       };
 
       });
+    // ==================================================================================================================
+    // Giphy API AND AJAX CALL
 
+     
+        // var queryURL = queryURLBase + queryTerm;
+        // console.log(queryURL); 
+
+        var queryURLGiphy = "https://api.giphy.com/v1/gifs/search?q=" + queryTerm + "&api_key=55fa83da04e04a38b28a997d9d79f784&limit=10";
+
+    $.ajax({
+      url: queryURLGiphy,
+      method: "GET"
+    })
+    .done(function(giphyData) {      
+      var results = giphyData.data;
+      console.log(giphyData);
+      console.log(queryURLGiphy);
+
+      $("#gifsArea").empty();
+          for (var j = 0; j < results.length; j++) {
+            var gifDiv = $("<div>");
+            var gifImage = results[j].images.fixed_height.url;
+            var still = results[j].images.fixed_height_still.url;
+            var politicianImage = $("<img>").attr("src", still).attr("data-animate", gifImage).attr("data-still", still);
+            politicianImage.attr("data-state", "still");
+      $("#gifsArea").prepend(politicianImage);
+      politicianImage.on("click", playsGif);
+
+          var rating = results[j].rating;
+          var p = $("<p>").text("Rating: " + rating);
+      $("#gifsArea").prepend(p);
+      $("#gifsArea").prepend(politicianImage);
+
+      }
+
+    });
       
      });   
 
