@@ -2,14 +2,21 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Three Amigos</title>
-
+	<title>Three Amigos Concert Page</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">	
 
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+  <style>
+  .jumbotron {
+      background-color: #F8C471;
+      color: #fff;
+  }
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
 </head>
 
 <body>
@@ -22,15 +29,35 @@
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </head>
 <body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">THREE AMIGOS</a>
+    </div>  
+    </ul>
+  </div>
+</nav>
+
+<style>
+.bg-grey {
+    background-color: #71DFF8;
+}
+</style>
+
+
 
 <div class="container">
 
       <!-- Jumbotron -->
       <div class="jumbotron" style="background-color: black; color: white">
-        <h1 class="text-center">Three Amigos !!!</h1>       
+        <h1 class="text-center">ARTIST and CONCERT SEARCH</h1>        
         <h4 class="text-center">Current Time: <span id="current-time"></span></h4>
 
-        
+   <style>
+.bg-grey {
+    background-color: #71DFF8;
+}
+</style>       
 
       </div>
 
@@ -97,7 +124,25 @@
 </script> -->
 <!-- END OF SPOTIFY API SEARCH AREA -->
 
+<!DOCTYPE html>
+<html>
+<body>
 
+<h1>Location, Location, Location</h1>
+
+<div id="googleMap" style="width:100%;height:400px;"></div>
+
+<script>
+function myMap() {
+var mapProp= {
+    center:new google.maps.LatLng(28.538336,-81.379234),
+    zoom:5,
+};
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGo6qsxYTL7-jMsGdf9KLO9p4ozU2tUgs&callback=myMap"></script>
 
 	
 	<footer>
