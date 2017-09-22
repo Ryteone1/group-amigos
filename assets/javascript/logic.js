@@ -35,45 +35,43 @@ $.ajax({
       url: queryURL,
       method: "GET"
     }).done(function(response) {
-      console.log(response); 
-      console.log(response._embedded.events); 
+      console.log(response);       
 
 
       // =====FOR LOOP THAT DISPLAYS SEARCH RESULTS INTO A TABLE========================================== 
     
      
-      var events = response._embedded.events;  
+      var events = response._embedded.events; 
+      console.log(events); 
 
-      $("#event-name").empty();
+      $("#event-table > tbody").empty();
+      $("#search-events-input").empty();
+
       for (var i = 0; i < events.length; i++) {          
         
 
-        var eventName = response._embedded.events[i].name; 
-        console.log(eventName);         
-
-        var location = response._embedded.events[i].dates.timezone;     
-                
-        var date = response._embedded.events[i].dates.start.localDate;
+        var eventName = events[i].name;             
+       
+        var location = events[i]._embedded.venues[0].city.name;
+                          
+        var date = events[i].dates.start.localDate;
         
-        var time = response._embedded.events[i].dates.start.localTime; 
+        var time = events[i].dates.start.localTime; 
 
-        var url = response._embedded.events[i].url;
-        console.log(url);    
+        var url = events[i].url;
+                  
 
         $("#event-table > tbody").append("<tr><td>" + eventName + "</td><td>" + location + "</td><td>" +
-        date + "</td><td>" + time + "</td><td>" + url + "</td></tr>");        
+        date + "</td><td>" + time + "</td><td><a target='_blank' href='" + url + "'>more info</a></td></tr>");        
 
       };
 
       });
     // ==================================================================================================================
-    // Giphy API AND AJAX CALL
+    // Giphy API AND AJAX CALL   
+        
 
-     
-        // var queryURL = queryURLBase + queryTerm;
-        // console.log(queryURL); 
-
-        var queryURLGiphy = "https://api.giphy.com/v1/gifs/search?q=" + queryTerm + "&api_key=55fa83da04e04a38b28a997d9d79f784&limit=6";
+    var queryURLGiphy = "https://api.giphy.com/v1/gifs/search?q=" + queryTerm + "&api_key=55fa83da04e04a38b28a997d9d79f784&limit=10";
 
     $.ajax({
       url: queryURLGiphy,
@@ -86,14 +84,18 @@ $.ajax({
 
       $("#gifsArea").empty();
           for (var j = 0; j < results.length; j++) {
+
+            if (results[j].rating !== "r" && results[j].rating !== "pg-13") {
             var gifDiv = $("<div>");
             var gifImage = results[j].images.fixed_height_small.url;
             var gifs = $("<img>").attr("src", gifImage);
 
             
-      $("#gifsArea").prepend(gifs);      
+      $("#gifsArea").append(gifs);      
 
-      }
+            }
+
+          }
 
     
 
@@ -101,6 +103,34 @@ $.ajax({
       
      });   
 
+
+ var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    $( "#search-events-input" ).autocomplete({
+      source: availableTags
+    });
 
 // END OF WORKING CODE FOR TICKETMASTER
 
