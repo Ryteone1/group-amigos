@@ -59,9 +59,10 @@ $.ajax({
 
         var url = response._embedded.events[i].url;
         console.log(url);    
+       
 
         $("#event-table > tbody").append("<tr><td>" + eventName + "</td><td>" + location + "</td><td>" +
-        date + "</td><td>" + time + "</td><td>" + url + "</td></tr>");        
+        date + "</td><td>" + time + "</td><td><a target='_blank' href='" + url + "'>visit website</a></td></tr>");        
 
       };
 
@@ -69,7 +70,7 @@ $.ajax({
     // ==================================================================================================================
     // Giphy API AND AJAX CALL
 
-     
+    
         // var queryURL = queryURLBase + queryTerm;
         // console.log(queryURL); 
 
