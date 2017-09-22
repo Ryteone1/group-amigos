@@ -2,7 +2,8 @@ footer {
 	text-align: center;
 }
 
-#event-name {
-	background: gray;
+.bg {
+  background: url('../threeback.jpg') no-repeat center center;
+  background-size: 100% 100%;
 }
 
