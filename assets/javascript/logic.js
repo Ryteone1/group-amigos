@@ -7,10 +7,17 @@
 //      display Gifs.  Pretty much, it would be like the size of an ad area to the right that many websites have
 // - the gifs will be playing on the right, while the user can view the search results on the left.
 
+// DISPLAYS CURRENT TIME ======================================================================
+
+  var currentTime = moment();
+  $("#current-time").text((currentTime).format("hh:mm"));
+  console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+
 
 // ===================================================================================================================
 // TICKETMASTER API AND AJAX CALL
 
+  var searchCounter = 0;
   var queryTerm = "";
 	var queryURLBase = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=NdH7ttoqHEznKuGMVdBINJqbG8r9w1Kk&keyword=";
 
@@ -21,33 +28,40 @@
         console.log(queryTerm);
         var queryURL = queryURLBase + queryTerm;
         console.log(queryURL); 
+        searchCounter++;
+        console.log("Historical Number of Searches: " + searchCounter);
 
 $.ajax({
       url: queryURL,
       method: "GET"
     }).done(function(response) {
       console.log(response); 
-      console.log(response._embedded.events);   
+      console.log(response._embedded.events); 
+
+
+      // =====FOR LOOP THAT DISPLAYS SEARCH RESULTS INTO A TABLE========================================== 
     
      
       var events = response._embedded.events;  
 
       $("#event-name").empty();
-      for (var i = 0; i < events.length; i++) {      
+      for (var i = 0; i < events.length; i++) {          
         
-        var eventName = $("<div id=event-name>" + response._embedded.events[i].name + "</div>");          
 
-        var location = $("<div id=location>" + response._embedded.events[i].dates.timezone + "</div>");     
+        var eventName = response._embedded.events[i].name; 
+        console.log(eventName);         
+
+        var location = response._embedded.events[i].dates.timezone;     
                 
-        var date = $("<div id=date>" + response._embedded.events[i].dates.start.localDate + "</div>");
+        var date = response._embedded.events[i].dates.start.localDate;
         
-        var time = $("<div id=time>" + response._embedded.events[i].dates.start.localTime + "</div>"); 
+        var time = response._embedded.events[i].dates.start.localTime; 
 
-        var url = $("<div id=url>" + response._embedded.events[i].url + "</div>");       
+        var url = response._embedded.events[i].url;
+        console.log(url);    
 
-        $("#event-name").append(eventName, location, date, time, url, "<br>"); 
-
-        
+        $("#event-table > tbody").append("<tr><td>" + eventName + "</td><td>" + location + "</td><td>" +
+        date + "</td><td>" + time + "</td><td>" + url + "</td></tr>");        
 
       };
 
