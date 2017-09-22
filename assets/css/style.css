@@ -2,3 +2,7 @@ footer {
 	text-align: center;
 }
 
+.bg {
+  background: url('../threeback.jpg') no-repeat center center;
+  background-size: 100% 100%;
+}
