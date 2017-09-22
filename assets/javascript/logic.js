@@ -45,6 +45,7 @@ $.ajax({
       console.log(events); 
 
       $("#event-table > tbody").empty();
+      $("#search-events-input").empty();
 
       for (var i = 0; i < events.length; i++) {          
         
