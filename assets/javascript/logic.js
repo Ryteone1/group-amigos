@@ -1,14 +1,4 @@
-// I used the train scheduler code just as a base to try to get the code working.  The train scheduler code 
-// had a nice table that I was hoping to get the search results to display in.  The thought was that once the code was working we 
-// could integrate it into the bootstrap code that Joe found. Whatever html theme we do decide to use, we will need the following:
-// - a search form at the top to search events. 
-// - a table or div area to display the results below the search form.  We can use Ticketmaster or Eventful as a reference
-// - perhaps the search results could take up 8 out of the 12 columns to the left; Leaving an open area to the right to 
-//      display Gifs.  Pretty much, it would be like the size of an ad area to the right that many websites have
-// - the gifs will be playing on the right, while the user can view the search results on the left.
-
-$(document).ready(function(){
-    
+$(document).ready(function(){  
 
 
 // DISPLAYS CURRENT TIME ======================================================================
@@ -52,7 +42,7 @@ $.ajax({
       console.log(events); 
 
       $("#event-table > tbody").empty();
-      // $("#search-events-form").reset();
+      // $("#search-events-form").empty();
 
       for (var i = 0; i < events.length; i++) {          
         
@@ -136,19 +126,51 @@ $.ajax({
       "Sia",
       "Skillet",
       "SZA",
-      "Haskell",
-      "Java",
-      "JavaScript",
-      "Lisp",
-      "Perl",
-      "PHP",
-      "Python",
-      "Ruby",
-      "Scala",
-      "Scheme"
+      "Calvin Harris",
+      "Childish Gambino",
+      "Coldplay",
+      "Ariana Grande",
+      "Adele",
+      "Bruno Mars",
+      "Blake Shelton",
+      "The Chainsmokers",
+      "Chris Brown",
+      "CHER",
+      "Demi Lovoto",
+      "Drake",
+      "Ed Sheeran",
+      "Florida Georgia Line",
+      "George Michael",
+      "Greatful Dead",
+      "Harry Styles",
+      "Imagine Dragons",
+      "John Legend",
+      "Katy Perry",
+      "Kesha",
+      "Lady Antebellum",
+      "Lady Gaga",
+      "Madonna",
+      "Miley Cyrus",
+      "Niki Minaj",
+      "One Republic",
+      "P!nk",
+      "Prince",
+      "Queen",
+      "Rihanna",
+      "Selena Gomez",
+      "Shakira",
+      "Sia",
+      "Taylor Swift",
+      "Train",
+      "U2",
+      "Usher",
+      "Van Morrison",
+      "Wiz Khalifa",
+      "Zedd"
     ];
     $( "#search-events-input" ).autocomplete({
       source: availableTags
+
     });
 
 
