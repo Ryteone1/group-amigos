@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 	<meta charset="UTF-8">
-	<title>THE AMIGOS concert page</title>
+	<title>AMIGOS concert page</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">	
 
-	 <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -25,14 +26,16 @@
     <!-- Moment.js Reference -->
     <!-- <script src="http://momentjs.com/downloads/moment.js"></script>   -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-</head>
+
 <body>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
+
       <a class="navbar-brand" href="#">a·mi·go
          /əˈmēɡō/ "friend, comrade"
 </a>
+
     </div>  
     </ul>
   </div>
@@ -42,17 +45,18 @@
 .bg-grey {
     background-color: #71DFF8;
 }
-
 </style>
 
 
 
-<div class="container">
+<!-- <div class="container"> -->
 
       <!-- Jumbotron -->
       <div class="jumbotron bg">
-        <h2 class="text-center"> THE AMIGOS ARTIST & CONCERT SEARCH</h2>        
-        <h4 class="text-center">Current Time: <span id="current-time"></span></h4>    
+
+        <h2 class="text-center">AMIGOS ARTIST & CONCERT SEARCH</h2>        
+<!--         <h4 class="text-center">Current Time: <span id="current-time"></span></h4>     -->
+
       </div>
 
         <form id="search-events-form" class="text-center">
@@ -60,14 +64,13 @@
           <input id="search-events-input" type="text">
           <input id="search-events-btn" type="submit" name="Search">
         </form>
- <div class="row">
- 
 
-     
+      <br>
+      <br>
+ <!-- <div class="row">      -->
 
         <div class="col-md-7">
 
-        <!-- Current Employees-->
           <div class="panel panel-primary">
             <div class="panel-heading">
               <h3 class="panel-title"><strong>Event List</strong></h3>
@@ -89,15 +92,29 @@
             </div>
           </div>
 
-          </div>
+        </div>
 
-<div id="gifsArea" class="col-md-5"></div>
+  <!-- </div> -->
+
+<div id="gifsArea" class="col-md-5"></div> 
      
-     
-    
 
 
-<!-- SPOTIFY SEARCH AREA -->
+<div id="googleMap" style="width:100%;height:400px;"></div>
+
+<script>
+function myMap() {
+    var mapProp= {
+    center:new google.maps.LatLng(28.538336,-81.379234),
+    zoom:5,
+    };
+
+    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    }
+</script>
+
+
+<!-- ================================SPOTIFY SEARCH AREA================================== -->
 <!-- <div class="container">
     <h1>Search for an Artist</h1>
     <p>Type an artist name and click on "Search". Then, click on any album from the results to play 30 seconds of its first track.</p>
@@ -112,43 +129,25 @@
     <div style="background-image:url({{images.0.url}})" data-album-id="{{id}}" class="cover"></div>
     {{/each}}
 </script> -->
-<!-- END OF SPOTIFY API SEARCH AREA -->
 
-
-
-<!DOCTYPE html>
-<html>
-<body>
-
-<!-- <h1>Location, Location, Location</h1> -->
-<h1</h1>
-
-<div id="googleMap" style="width:100%;height:400px;"></div>
-
-<script>
-function myMap() {
-var mapProp= {
-    center:new google.maps.LatLng(28.538336,-81.379234),
-    zoom:5,
-};
-var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-}
-</script>
+<!-- ==============================END OF SPOTIFY API SEARCH AREA============================= -->
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGo6qsxYTL7-jMsGdf9KLO9p4ozU2tUgs&callback=myMap"></script>
 
-	
-	<footer>
-          <h5>&copy 2017 THE AMIGOS</h5>
-    </footer>
+  
+  <footer>
+    <h5>&copy 2017 Amigos</h5>
+  </footer>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-	<script type="text/javascript" src="assets/javascript/logic.js"></script>
+  <script type="text/javascript" src="assets/javascript/logic.js"></script>
 
 
 
-	
+  
 </body>
 </html>
+
+
