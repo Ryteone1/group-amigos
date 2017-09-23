@@ -7,11 +7,15 @@
 //      display Gifs.  Pretty much, it would be like the size of an ad area to the right that many websites have
 // - the gifs will be playing on the right, while the user can view the search results on the left.
 
+$(document).ready(function(){
+    
+
+
 // DISPLAYS CURRENT TIME ======================================================================
 
-  var currentTime = moment();
-  $("#current-time").text((currentTime).format("hh:mm"));
-  console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+  // var currentTime = moment();
+  // $("#current-time").text((currentTime).format("hh:mm"));
+  // console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
 
 
 // ===================================================================================================================
@@ -23,7 +27,10 @@
 
   $("#search-events-btn").on("click", function(event) {
         event.preventDefault();
-      
+
+//  CODE BELOW USES JQUERY TO SELECT THE DIV WITH CLASS NAME PANEL-PRIMARY AND CHANGE THE DISPLAY ATTR FROM NONE TO BLOCK
+  $(".panel-primary").attr("style", "display: block;");
+
         queryTerm = $("#search-events-input").val().trim();
         console.log(queryTerm);
         var queryURL = queryURLBase + queryTerm;
@@ -45,7 +52,7 @@ $.ajax({
       console.log(events); 
 
       $("#event-table > tbody").empty();
-      $("#search-events-input").empty();
+      // $("#search-events-form").reset();
 
       for (var i = 0; i < events.length; i++) {          
         
@@ -68,8 +75,7 @@ $.ajax({
 
       });
     // ==================================================================================================================
-    // Giphy API AND AJAX CALL   
-        
+    // Giphy API AND AJAX CALL          
 
     var queryURLGiphy = "https://api.giphy.com/v1/gifs/search?q=" + queryTerm + "&api_key=55fa83da04e04a38b28a997d9d79f784&limit=10";
 
@@ -83,21 +89,33 @@ $.ajax({
       console.log(queryURLGiphy);
 
       $("#gifsArea").empty();
+
+      // var carouselA = $("<div class='carousel'>");
+
           for (var j = 0; j < results.length; j++) {
 
             if (results[j].rating !== "r" && results[j].rating !== "pg-13") {
+      // // var gifDiv = $("<a class='carousel-item' href='"#" + j + ""'>");
             var gifDiv = $("<div>");
             var gifImage = results[j].images.fixed_height_small.url;
             var gifs = $("<img>").attr("src", gifImage);
 
-            
-      $("#gifsArea").append(gifs);      
+            $("#gifsArea").append(gifs);
 
+  //      <div class="carousel">
+  //   <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/250/250/nature/1"></a>
+  //   <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/250/250/nature/2"></a>
+  //   <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/250/250/nature/3"></a>
+  //   <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/250/250/nature/4"></a>
+  //   <a class="carousel-item" href="#five!"><img src="https://lorempixel.com/250/250/nature/5"></a>
+  // </div>     
+      // carouselA.append(gifs); 
             }
 
           }
 
-    
+      // $(".panel-primary").prepend(carouselA);
+      // $('.carousel').carousel();    
 
     });
       
@@ -105,18 +123,19 @@ $.ajax({
 
 
  var availableTags = [
-      "ActionScript",
-      "AppleScript",
-      "Asp",
-      "BASIC",
-      "C",
-      "C++",
-      "Clojure",
-      "COBOL",
-      "ColdFusion",
-      "Erlang",
-      "Fortran",
-      "Groovy",
+      "Shawn Mendes",
+      "Ed Sheeran",
+      "Shakira",
+      "Shaggy",
+      "Sam Hunt",
+      "Sam Smith",
+      "Seventh Day Slumber",
+      "Seal",
+      "Big Sean",
+      "Rae Sremmund",
+      "Sia",
+      "Skillet",
+      "SZA",
       "Haskell",
       "Java",
       "JavaScript",
@@ -132,7 +151,22 @@ $.ajax({
       source: availableTags
     });
 
-// END OF WORKING CODE FOR TICKETMASTER
+
+// ===========CODE FOR THE GOOGLE MAP AT BOTTOM OF PAGE ============================================================================
+// ===========COMMENTED OUT BECAUSE MAP STOPPED WORKING WHEN MOVED HERE FROM INDEX.HTML ============================================
+
+   // function myMap() {
+   //  var mapProp= {
+   //  center:new google.maps.LatLng(28.538336,-81.379234),
+   //  zoom:5,
+   //  };
+
+   //  var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+   //  } 
+    
+
+    });  // CLOSING FOR $(document).ready(function() {})
+
 
 
 
