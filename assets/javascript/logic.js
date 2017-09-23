@@ -55,8 +55,7 @@ $.ajax({
     // ==================================================================================================================
     // Giphy API AND AJAX CALL
 
-     
-        // var queryURL = queryURLBase + queryTerm;
+          // var queryURL = queryURLBase + queryTerm;
         // console.log(queryURL); 
 
         var queryURLGiphy = "https://api.giphy.com/v1/gifs/search?q=" + queryTerm + "&api_key=55fa83da04e04a38b28a997d9d79f784&limit=6";
