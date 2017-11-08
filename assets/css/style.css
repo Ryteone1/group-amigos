@@ -1,0 +1,22 @@
+footer {
+	text-align: center;
+}
+
+.bg {
+  background: url('../threeback.jpg') no-repeat center center;
+  background-size: 90% 120%;
+}
+
+img {
+	width: 200px;
+}
+
+.panel-primary {
+	display: none;
+}
+/*
+#googleMap {
+	width: 100%;
+	height: 400px;
+}
+*/

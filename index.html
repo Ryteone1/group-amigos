@@ -1,10 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>AMIGOS Concert Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+
+   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+ 
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
 </head>
+
 <body>
-	
+
+<!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+
+    <!-- Moment.js Reference -->
+    <!-- <script src="http://momentjs.com/downloads/moment.js"></script>   -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+
+      <a class="navbar-brand" href="#">Amigos
+        <!-- a·mi·go
+         /əˈmēɡō/ "friend, comrade" -->
+</a>
+
+    </div>  
+    </ul>
+  </div>
+</nav>
+
+<style>
+.bg-grey {
+    background-color: #71DFF8;
+}
+</style>
+
+
+
+<!-- <div class="container"> -->
+
+      <!-- Jumbotron -->
+      <div class="jumbotron bg">
+
+        <h2 class="text-center">AMIGOS ARTIST & CONCERT SEARCH</h2>        
+<!--         <h4 class="text-center">Current Time: <span id="current-time"></span></h4>     -->
+
+      </div>
+
+        <form id="search-events-form" class="text-center">
+          <label for="search-events">Search events</label>
+          <input id="search-events-input" type="text">
+          <input id="search-events-btn" type="submit" name="Search">
+        </form>
+
+      <br>
+      <br>
+ <!-- <div class="row">      -->
+
+        <div class="col-md-7">
+
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title"><strong>Event List</strong></h3>
+            </div>
+            <div class="panel-body">
+              <table class="table table-hover" id="event-table">
+                <thead>
+                  <tr>
+                    <th>Event Name</th>
+                    <th>Location</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Url</th>                    
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+  <!-- </div> -->
+
+<div id="gifsArea" class="col-md-5"></div> 
+     
+
+
+<div id="googleMap" style="width:100%;height:400px;"></div>
+
+<script>
+function myMap() {
+    var mapProp= {
+    center:new google.maps.LatLng(28.538336,-81.379234),
+    zoom:5,
+    };
+
+    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    }
+</script>
+
+
+<!-- ================================SPOTIFY SEARCH AREA================================== -->
+<!-- <div class="container">
+    <h1>Search for an Artist</h1>
+    <p>Type an artist name and click on "Search". Then, click on any album from the results to play 30 seconds of its first track.</p>
+    <form id="search-form">
+        <input type="text" id="query" value="" class="form-control" placeholder="Type an Artist Name"/>
+        <input type="submit" id="search" class="btn btn-primary" value="Search" />
+    </form>
+    <div id="results"></div>
+</div>
+<script id="results-template" type="text/x-handlebars-template">
+    {{#each albums.items}}
+    <div style="background-image:url({{images.0.url}})" data-album-id="{{id}}" class="cover"></div>
+    {{/each}}
+</script> -->
+
+<!-- ==============================END OF SPOTIFY API SEARCH AREA============================= -->
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGo6qsxYTL7-jMsGdf9KLO9p4ozU2tUgs&callback=myMap"></script>
+
+  
+  <footer>
+    <h5>&copy 2017 Amigos</h5>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <script type="text/javascript" src="assets/javascript/logic.js"></script>
+
+
+
+  
 </body>
 </html>
+
+
