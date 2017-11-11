@@ -1,12 +1,12 @@
 
-
+var express = require("express");
 // bring in the models
 var db = require("./models");
 
-var app = express();
-
 // listen on port 3000
 var port = process.env.PORT || 3000;
+var app = express();
+
 
 
 
