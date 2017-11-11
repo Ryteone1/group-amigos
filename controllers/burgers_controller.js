@@ -6,7 +6,7 @@
 // but with each route gutted and replaced with sequelize queries
 // where references to our outmoded ORM file once sat.
 var express = require("express");
-console.log("hello");
+
 
 var router = express.Router();
 // grabbing our models
