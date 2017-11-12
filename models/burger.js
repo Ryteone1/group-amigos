@@ -1,7 +1,34 @@
-// Burger models
+// DEVELOPMENT CODE ========================
+// module.exports = function(sequelize, DataTypes) {
+//   var FavArtists = sequelize.define("FavArtists", {
+//     fav_artist1: {
+//       type: DataTypes.STRING,
+//       allowNull: false
+//     },
+//     fav_artist2: {
+//       type: DataTypes.STRING
+//     },
+//     fav_artist3: {
+//       type: DataTypes.STRING
+//     },
+//     fav_artist4: {
+//       type: DataTypes.STRING
+//     },
+//     fav_artist5: {
+//       type: DataTypes.STRING
+//     }
+  
+//   });
 
-// The burger has a burger_name attribute of type DataTypes.String
-// and a devoured attribute that is false by default
+//   Burger.associate = function(models) {
+//         Burger.belongsTo(models.Customer);
+//       }
+
+//   return Burger;
+// };
+
+
+// CODE WE HAD WORKING ON SATURDAY =======
 
 module.exports = function(sequelize, DataTypes) {
   var Burger = sequelize.define("Burger", {
@@ -20,8 +47,7 @@ module.exports = function(sequelize, DataTypes) {
         Burger.belongsTo(models.Customer);
       }
 
-
   return Burger;
 };
 
-//just a comment
+

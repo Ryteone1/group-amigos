@@ -7,7 +7,6 @@
 // where references to our outmoded ORM file once sat.
 var express = require("express");
 
-
 var router = express.Router();
 // grabbing our models
 var db = require("../models");

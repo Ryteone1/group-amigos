@@ -1,5 +1,4 @@
-// Solution 2: Customer Relations
-// ===========================================
+
 
 // Step 1: Created a Customer model in ./models/customer.js
 // Step 2: Updated the Burger model to have a hasOne(models.Customer) relation
