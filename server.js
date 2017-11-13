@@ -1,5 +1,4 @@
-// Solution 2: Customer Relations
-// ===========================================
+
 
 // Step 1: Created a Customer model in ./models/customer.js
 // Step 2: Updated the Burger model to have a hasOne(models.Customer) relation
@@ -33,7 +32,7 @@ app.engine("handlebars", exphbs({
 }));
 app.set("view engine", "handlebars");
 
-var routes = require("./controllers/burgers_controller");
+var routes = require("./controllers/users_controller");
 
 app.use("/", routes);
 app.use("/update", routes);
