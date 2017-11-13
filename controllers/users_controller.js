@@ -20,15 +20,15 @@ router.get("/", function(req, res) {
 // get route, edited to match sequelize
 router.get("/burgers", function(req, res) {
   // replace old function with sequelize function
-  db.Burger.findAll({
-    include: [db.Customer],
+  db.FavArtists.findAll({
+    include: [db.User],
     // Here we specify we want to return our burgers in ordered by ascending burger_name
     order: [
-      ["burger_name", "ASC"]
+      ["id", "ASC"]
     ]
   })
-  // use promise method to pass the burgers...
-  .then(function(dbBurger) {
+  // use promise method to pass the favorite artists...
+  .then(function(dbUserInfo) {
     // into the main index, updating the page
     var hbsObject = {
       burger: dbBurger
