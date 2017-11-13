@@ -20,18 +20,18 @@ router.get("/", function(req, res) {
 // get route, edited to match sequelize
 router.get("/burgers", function(req, res) {
   // replace old function with sequelize function
-  db.FavArtists.findAll({
+  db.FavArtist.findAll({
     include: [db.User],
     // Here we specify we want to return our burgers in ordered by ascending burger_name
     order: [
-      ["id", "ASC"]
+      ["fav_artist", "ASC"]
     ]
   })
   // use promise method to pass the favorite artists...
-  .then(function(dbUserInfo) {
+  .then(function(dbFavArtist) {
     // into the main index, updating the page
     var hbsObject = {
-      burger: dbBurger
+      FavArtist: dbFavArtist
     };
     return res.render("index", hbsObject);
   });
@@ -40,13 +40,13 @@ router.get("/burgers", function(req, res) {
 // post route to create burgers
 router.post("/burgers/create", function(req, res) {
   // edited burger create to add in a burger_name
-  db.Burger.create({
-    burger_name: req.body.burger_name
+  db.FavArtist.create({
+    fav_artist: req.body.fav_artist
   })
   // pass the result of our call
-  .then(function(dbBurger) {
+  .then(function(dbFavArtist) {
     // log the result to our terminal/bash window
-    console.log(dbBurger);
+    console.log(dbFavArtist);
     // redirect
     res.redirect("/");
   });
@@ -54,35 +54,35 @@ router.post("/burgers/create", function(req, res) {
 
 // put route to devour a burger
 router.put("/burgers/update", function(req, res) {
-  // If we are given a customer, create the customer and give them this devoured burger
-  if (req.body.customer) {
-    db.Customer.create({
-      customer: req.body.customer,
-      BurgerId: req.body.burger_id
+  // If we are given a user, create the customer and give them this devoured burger
+  if (req.body.user) {
+    db.User.create({
+      user: req.body.user,
+      Fav_ArtistId: req.body.fav_artist_id
     })
-    .then(function(dbCustomer) {
-      return db.Burger.update({
-        devoured: true
+    .then(function(dbUser) {
+      return db.FavArtist.update({
+        buytickets: true
       }, {
         where: {
-          id: req.body.burger_id
+          id: req.body.fav_artist_id
         }
       });
     })
-    .then(function(dbBurger) {
+    .then(function(dbFavArtist) {
       res.redirect("/");
     });
   }
   // If we aren't given a customer, just update the burger to be devoured
   else {
-    db.Burger.update({
-      devoured: true
+    db.FavArtist.update({
+      buytickets: true
     }, {
       where: {
-        id: req.body.burger_id
+        id: req.body.fav_artist_id
       }
     })
-    .then(function(dbBurger) {
+    .then(function(dbFavArtist) {
       res.redirect("/");
     });
   }

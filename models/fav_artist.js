@@ -1,30 +1,22 @@
 // DEVELOPMENT CODE ========================
 module.exports = function(sequelize, DataTypes) {
-  var FavArtists = sequelize.define("FavArtists", {
-    fav_artist1: {
+  var FavArtist = sequelize.define("FavArtist", {
+    fav_artist: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
-    fav_artist2: {
-      type: DataTypes.STRING
-    },
-    fav_artist3: {
-      type: DataTypes.STRING
-    },
-    fav_artist4: {
-      type: DataTypes.STRING
-    },
-    fav_artist5: {
-      type: DataTypes.STRING
+    buytickets: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
     }
   
   });
 
-  FavArtists.associate = function(models) {
-        FavArtists.belongsTo(models.User);
+  FavArtist.associate = function(models) {
+        FavArtist.belongsTo(models.User);
       }
 
-  return FavArtists;
+  return FavArtist;
 };
 
 

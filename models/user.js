@@ -11,7 +11,7 @@ module.exports = function(sequelize, DataTypes) {
 User.associate = function(models) {
     // Associating User with Favorite Artists
     // When a User is deleted, also delete any associated Favorite Artists
-    User.hasMany(models.FavArtists, {
+    User.hasMany(models.FavArtist, {
       onDelete: "cascade"
     });
   };
