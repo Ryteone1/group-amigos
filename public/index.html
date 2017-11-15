@@ -6,23 +6,27 @@
 	<title>AMIGOS Concert Page</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">	
 
-   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://use.fontawesome.com/84200971f5.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
  
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+
+
 </head>
 
 <body>
 
-    <!-- Moment.js Reference -->
-    <!-- <script src="http://momentjs.com/downloads/moment.js"></script>   -->
-    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <!-- Moment.js Reference -->
+  <!-- <script src="http://momentjs.com/downloads/moment.js"></script>   -->
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     
 
 <!-- Amigos Navbar at Top-->
@@ -45,47 +49,53 @@
 <!-- <div class="container"> -->
 
       <!-- Jumbotron -->
-      <div class="jumbotron bg">
-
-        <h2 class="text-center">AMIGOS ARTIST & CONCERT SEARCH</h2>        
+  <div class="jumbotron bg">
+    <h2 class="text-center">AMIGOS ARTIST & CONCERT SEARCH</h2>        
 <!--         <h4 class="text-center">Current Time: <span id="current-time"></span></h4>     -->
+  </div>
 
+<!-- Search for artists/events -->
+  <div class="row">
+    <div class="text-center">
+      <form class="navbar-form navbar-center" id="add-favorites-form" role="search">
+          <div class="form-group">
+            <input type="text" id="queryTerm" class="form-control" placeholder="Search for events, artists, teams or venues">
+          </div>
+          <button type="submit" class="btn btn-primary" id="search-events-btn"><i class="fa fa-search fa-lg" aria-hidden="true"></i></button>      
+      </form>
+    </div>
+  </div>
+<!-- End of Search for artists/events -->
+
+  <br>
+  <br>
+
+  <div class="col-md-7">
+    <div class="panel panel-primary">
+
+      <div class="panel-heading">
+        <h3 class="panel-title"><strong>Event List</strong></h3>
       </div>
 
-        <form id="search-events-form" class="text-center">
-          <label for="search-events">Search events</label>
-          <input id="search-events-input" type="text">
-          <input id="search-events-btn" type="submit" name="Search">
-        </form>
 
-      <br>
-      <br>
- <!-- <div class="row">      -->
+      <div class="panel-body">
+        <table class="table table-hover" id="event-table">
+          <thead>
+            <tr>
+              <th>Event Name</th>
+              <th>Location</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Url</th>                    
+            </tr>
+          </thead>
+            <tbody></tbody>
+        </table>
+      </div>
 
-        <div class="col-md-7">
 
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title"><strong>Event List</strong></h3>
-            </div>
-            <div class="panel-body">
-              <table class="table table-hover" id="event-table">
-                <thead>
-                  <tr>
-                    <th>Event Name</th>
-                    <th>Location</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Url</th>                    
-                  </tr>
-                </thead>
-                <tbody>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-        </div>
+    </div>
+  </div>
 
   <!-- </div> -->
 
@@ -93,18 +103,7 @@
      
 
 
-<div id="googleMap" style="width:100%;height:400px;"></div>
 
-<script>
-function myMap() {
-    var mapProp= {
-    center:new google.maps.LatLng(28.538336,-81.379234),
-    zoom:5,
-    };
-
-    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-    }
-</script>
 
 
 <!-- ================================SPOTIFY SEARCH AREA================================== -->
@@ -125,8 +124,6 @@ function myMap() {
 
 <!-- ==============================END OF SPOTIFY API SEARCH AREA============================= -->
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGo6qsxYTL7-jMsGdf9KLO9p4ozU2tUgs&callback=myMap"></script>
-
   
   <footer>
     <h5>&copy 2017 Amigos</h5>
@@ -137,9 +134,6 @@ function myMap() {
 
   <script type="text/javascript" src="assets/javascript/logic.js"></script>
 
-
-
-  
 </body>
 </html>
 

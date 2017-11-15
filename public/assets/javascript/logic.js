@@ -1,15 +1,14 @@
 $(document).ready(function(){  
 
 
-// DISPLAYS CURRENT TIME ======================================================================
+// DISPLAYS CURRENT TIME ===========================================================
 
   // var currentTime = moment();
   // $("#current-time").text((currentTime).format("hh:mm"));
   // console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
 
 
-// ===================================================================================================================
-// TICKETMASTER API AND AJAX CALL
+// TICKETMASTER API AND AJAX CALL =========================
 
   var searchCounter = 0;
   var queryTerm = "";
@@ -21,12 +20,15 @@ $(document).ready(function(){
 //  CODE BELOW USES JQUERY TO SELECT THE DIV WITH CLASS NAME PANEL-PRIMARY AND CHANGE THE DISPLAY ATTR FROM NONE TO BLOCK
   $(".panel-primary").attr("style", "display: block;");
 
-        queryTerm = $("#search-events-input").val().trim();
+        queryTerm = $("#queryTerm").val().trim();
         console.log(queryTerm);
+
         var queryURL = queryURLBase + queryTerm;
         console.log(queryURL); 
+
         searchCounter++;
         console.log("Historical Number of Searches: " + searchCounter);
+        $("#queryTerm").val("");
 
 $.ajax({
       url: queryURL,
@@ -35,9 +37,8 @@ $.ajax({
       console.log(response);       
 
 
-      // =====FOR LOOP THAT DISPLAYS SEARCH RESULTS INTO A TABLE========================================== 
-    
-     
+// FOR LOOP THAT DISPLAYS SEARCH RESULTS INTO A TABLE =========
+
       var events = response._embedded.events; 
       console.log(events); 
 
@@ -64,8 +65,8 @@ $.ajax({
       };
 
       });
-    // ==================================================================================================================
-    // Giphy API AND AJAX CALL          
+    
+    // Giphy API AND AJAX CALL ===============================
 
     var queryURLGiphy = "https://api.giphy.com/v1/gifs/search?q=" + queryTerm + "&api_key=55fa83da04e04a38b28a997d9d79f784&limit=10";
 
@@ -107,11 +108,24 @@ $.ajax({
       // $(".panel-primary").prepend(carouselA);
       // $('.carousel').carousel();    
 
-    });
+    }); 
+
+//  Ajax request to our Api ============================
+    $.ajax({
+      url: "/api/artist",
+      method: "GET",
+      data: {
+        artist: queryTerm
+      }
+    }).done(function(response) {
+      console.log(response); 
+      });  
+      // on response console.log
+  
       
-     });   
+     }); // Closing tag for .on("click,..) event 
 
-
+// For AutoComplete functionality ======================
  var availableTags = [
       "Shawn Mendes",
       "Ed Sheeran",
