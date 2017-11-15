@@ -5,16 +5,12 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: true
     },
-    buytickets: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false
-    }
-  
+    search_hits: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0
+    }    
+      
   });
-
-  FavArtist.associate = function(models) {
-        FavArtist.belongsTo(models.User);
-      }
 
   return FavArtist;
 };

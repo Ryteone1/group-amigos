@@ -41,7 +41,7 @@ var env = process.env.NODE_ENV || 'development';
 
 var syncOptions = {};
 if (env === "development") {
-	syncOptions.force = true;
+	syncOptions.force = false;
 	console.log("Dropping tables");
 }
 
