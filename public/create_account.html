@@ -1,278 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>AMIGOS Concert Page</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">	
-
-   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
- 
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+  <title>Amigos Create Account</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+  <link href="stylesheets/style.css" rel="stylesheet">
 </head>
+
 <body>
-	
-	<!-- Amigos Navbar at Top-->
-	<nav class="navbar navbar-inverse">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-	      <a class="navbar-brand" href="#">Amigos</a> 
-	    </div>  
-	  </div>
-	</nav>
-
-	<style>
-	.bg-grey {
-	    background-color: #71DFF8;
-	}
-	</style>	
-<!-- End of Navbar section -->
-
-
-	<!-- followed set up  https://www.eduonix.com/blog/java-programming-2/learn-to-create-sign-up-page-along-with-database-connectivity-in-java/ -->
-
-<div id="contentWrap">
-            <div class="frame">    <div id="sidePlacement-wrapper">
-       <div class="inline_block" id="sidePlacement" style="display:none;"></div>
-    </div>                <div id="mainContent">
-                    <div>
-                
-
-
-    <div id="main">        <div class="lid-primary">
-            <h1>Create Your Amigo Account</h1>
-        </div>
-
-        <div class="container-checkout"> 
-        
-              <table border="0" colspacing="0" cellspacing="0">
-                <tbody>
-                  <tr>
-                    <td width="100%">
-                      
-                    </td>
-                    <td valign="top" align="right" nowrap="nowrap">
-                      <form method="POST" name="sign_in" action="/member/login" role="form" autocomplete="off">
-                        <input type="hidden" name="v" value="s-K4wv2XKENR4-FK0q-bIhQ0eX_rA9OoYOHpM1sTF5mW8ZYacVHqfYVeSxeV1KC_2eMXmj43prl6pp5434_G5r_MPZ7psmtMPzjt0hjQckBHOtc_2CI9yg">
-                          <h2 class="txt11" style="font-weight:normal; display:inline;">Already an Amigo?                           </h2>                          <input type="submit" value="Log In" class="button" id="submit">                      </form>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-  
-            <form method="POST" action="/member/login" name="create_account" onsubmit="return validateEMails();" role="form" autocomplete="off">
-                <input type="hidden" name="v" value="R2uHW5hhuFRsYkM346yJHJPtKsxEhFe4FTQLZf8-BxlzGwuFbDMaWUMvMu7_gDEHxAnBTvbopfnEZF_Nm-p4imH4lB0V3LB2X8aMd75QUOsB0RysjxLVUj8ahvfrZVQ">
-                                <p class="requiredText" title="= Fields marked with an * are required">* = Required Text</p>            
-                <table summary="Table containing fields to enter credit card billing information." id="create_account_table" border="0" cellpadding="3" cellspacing="0" width="96%">
-                    <tbody id="create_account_table_body"><tr>                        </tr><tr>
-                            <th scope="row" align="left" width="18%" id="fname">
-                                <label for="first_name">First Name<span class="requiredText">*</span>                                </label>
-                            </th>
-                            <td width="25%"><input type="text" name="first_name" id="first_name" aria-required="true" value="" size="30"></td>
-                            <td> </td>
-                        </tr>                        <tr>
-                            <th scope="row" align="left" width="18%" id="fname">
-                                <label for="last_name">Last Name<span class="requiredText">*</span>                                </label>
-                            </th>
-                            <td width="25%"><input type="text" name="last_name" id="last_name" aria-required="true" value="" size="30"></td>
-                            <td> </td>
-                        </tr> 
-                        <tr>
-                            <th scope="row" align="left">
-                                <label for="email_address">E-mail Address<span class="requiredText">*</span>                                </label></th>
-                            <td><input type="text" name="email_address" id="email_address" class="js-preventCopyPaste" aria-required="true" value="" size="30"></td>
-                            <td> </td>
-                        </tr>
-                        <tr>
-                            <th scope="row" align="left">
-                                <label for="email_address_retype">Retype E-mail Address<span class="requiredText">*</span>                                </label>
-                            </th>
-                            <td><input type="text" name="email_address_retype" id="email_address_retype" class="js-preventCopyPaste" aria-required="true" value="" size="30"></td>
-                            <td> </td>
-                        </tr>                        <tr>
-                            <th scope="row" align="left">
-                                <label for="password">Type Password<span class="requiredText">*</span>                                </label>
-                            </th>
-                            <td>
-                                <input type="password" name="password" id="password" aria-required="true" size="30" aria-describedby="password_requirements_tooltip">
-                                <script type="text/javascript">
-                                    jQuery(function ($) {
-                                        var passwordDescription_popup = new Popup("password_requirements_tooltip", {
-                                                links: [{
-                                                    group:          'accountForm_group',
-                                                    toggle:         false,
-                                                    link_id:        'password',
-                                                    popup_align:    { x: -1, y: -1 },
-                                                    anchor_align:   { x: 1, y:  -1 },
-                                                    offset:         { x: 11, y: -5 }
-                                                }],
-                                                link_event: ['focus'],
-                                                hide_event: ['blur'],
-                                                no_iframe:  true
-                                            });
-                                    });
-                                </script>
-
-
-    <div class="popup password_requirements" style="display: none; z-index: 100; position: absolute;" id="password_requirements_tooltip" role="tooltip" aria-labelledby="password_requirements_tooltip_title" aria-describedby="password_requirements_tooltip_content">
-
-
-    <span class="caret-left" style="position:absolute;top:7px;left:-8px;"></span>
-
-
-    <h5 class="popup-title" id="password_requirements_tooltip_title">
-Password Requirements:
-    </h5>
-
-
-    <ul class="popup-content" id="password_requirements_tooltip_content">
-
-
-
-
-            <li>
-Must be 6-32 characters
-            </li>
-
-
-            <li>
-Must contain at least one letter and one number
-            </li>
-
-
-            <li>
-Special characters strongly encouraged (@$&amp;%#)
-            </li>
-
-
-
-
-    </ul>
-
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+      </div>
     </div>
-
-                            </td>
-                            <td> </td>
-                        </tr>
-                        <tr>
-                            <th scope="row" align="left">
-                               <label for="password_confirm">Retype Password<span class="requiredText">*</span>                               </label>
-                            </th>
-                            <td><input type="password" name="password_confirm" id="password_confirm" aria-required="true" size="30"></td>
-                            <td> </td>
-                        </tr>
-                        <tr>
-                            <th scope="row" align="left">
-                                <label for="country_id">Country of Residence<span class="requiredText">*</span>                                </label>
-                            </th>
-                            <td id="country_input"><select name="country_id" id="country_id"><option value="">Select Country</option><option value="222">United States Of America</option><option value="36">Canada</option><option value="14">Australia</option><option value="149">Mexico</option><option value="163">New Zealand</option><option value="0">Other</option></select></td>
-                            <td></td>
-                        </tr>
-                        <tr id="zip_row"></tr>
-                    </tbody>
-                </table>
-
-                <table border="0" cellpadding="3" cellspacing="0" width="96%">
-                    <tbody id="permissions_tbody">
-                                            </tbody>
-                </table>
-                <br>                <br>             <span id="legal_span">
-             </span>                <br>
-                <br>
-
-                <div align="center">
-                    <input class="button" id="continue" value="Accept and Continue" type="submit">
-                </div>
-
-
-            </form>
-            <br>
-        </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h2>Create Account Form</h2>
+        <form class="signup">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="email-input" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="password-input" placeholder="Password">
+          </div>
+          <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span> <span class="msg"></span>
+          </div>
+          <button type="submit" class="btn btn-default">Create Account</button>
+        </form>
+        <br />
+        <p>Or log in <a href="/login">here</a></p>
+      </div>
     </div>
+  </div>
 
-    <div class="spacer15px"></div>
-</div>
-<div id="errorMessageStyles" class="errorMessage"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/signup.js"></script>
 
-<script language="JavaScript"><!--
-CountryDropDown();
-//-->
-</script>
-
-
-
-
-
-
-<div id="checkout_delete_cc_dialog" class="lightbox  " style="display:none; width:470px;" tabindex="0" role="alertdialog" aria-labelledby="checkout_delete_cc_dialog_heading"> 
-
-
-
-
-
-
-<div class="lightbox-content"> 
-
-
-
-
-<div class="lightbox-container">
-  
-    <h3 id="checkout_delete_cc_heading">Attention!</h3>
-    <br>
-    <p>Are you sure you want to delete this credit card? If you are selling tickets, deleting a card tied to your ticket listings will delay payment.    </p>
-    <div style="padding-top:16px;text-align:center">
-
-    <input type="button" id="checkout_delete_cc_button" class="save button" value="Delete">
-    <span class="gap20">&nbsp;</span>
-    
-    <input type="button" id="checkout_delete_cc_close_button" class="button-secondary close_box" value="Cancel!">
-
-    </div>
-    
-</div>
-
-
-
-
-</div>
-
-
-
-
-</div>
-
-
-
-    
-<script type="text/javascript">
-window.onload = function() {
-    if (TM.Ads && typeof TM.Ads.iframeAssets != "undefined" && TM.Ads.iframeAssets.length > 0){
-       jQuery.each(TM.Ads.iframeAssets, function(i,k){
-           if( jQuery( k.name ).length > 0 && k.src ){
-              if ((this.name) == "#edp_leaderboard"){
-                  this.src = appendTransID(this.src, true);
-              }
-              ( function(o){
-                   setTimeout( function() { 
-                       jQuery( o.name ).attr("src", o.src ) 
-                   } , 200 );
-               }(k) )
-           }
-       })
-    }
-}
-
-</script>                    <div class="clear"></div>
-                        </div>
-                </div>                                <div id="bottomPlacement" class="top-selling" style="display:none;"></div>
-            </div>
-	
 </body>
+
 </html>
