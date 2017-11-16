@@ -1,289 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>	
-	<meta charset="UTF-8">
-	<title>AMIGOS Concert Page</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">	
 
-   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
- 
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+<head>
+  <title>Amigos Sign In</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+  <link href="stylesheets/style.css" rel="stylesheet">
 </head>
 
 <body>
-
-	<!-- Amigos Navbar at Top-->
-	<nav class="navbar navbar-inverse">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-	      <a class="navbar-brand" href="#">Amigos</a> 
-	    </div>  
-	  </div>
-	</nav>
-
-	<style>
-	.bg-grey {
-	    background-color: #71DFF8;
-	}
-	</style>
-<!-- End of Navbar section -->
-
-
-	<div class="frame">    <div id="sidePlacement-wrapper">
-       <div class="inline_block" id="sidePlacement" style="display:none;"></div>
-    </div>                <div id="mainContent">
-                    <div>                
-
-
-<div id="main">
-<script language="JavaScript">
-function openWin(url, name) {
-    popupWin = window.open(url, name, "menubar=no,statusbar=no,scrollbars=no,resizable=no,width=275,height=255,top=10,left=10");
-}
-</script>
-
-
-    <div class="lid-primary"><h1>Sign in to My Amigo Account    </h1></div><div class="container-checkout">        <table border="0" colspacing="0" cellspacing="0">
-          <tbody>
-            <tr>
-              <td width="100%">
-                
-              </td>
-              <td valign="top" align="right" nowrap="nowrap">                <form method="POST" name="create_acct_link" action="/member/login" role="form" autocomplete="off">
-                  <input type="hidden" name="v" value="XXATbp1Nj3KojuTOlNGt_l0Zz36fGoVawWSDgPfLDoeNh_BzzK40IqYa0BAEZdpG_QjnaTV0nvUZV36TH_l9ClscOp01CGAiPNKwlhuz53B3zcGnF0ZnEQ">
-                    <h2 class="txt11" style="font-weight:normal; display:inline;">Create Your Amigo account?                    </h2>
-                    <input value="Create Account" class="button" type="submit">
-                </form>              </td>
-            </tr>
-          </tbody>
-        </table>
-    
-<form name="sign_in" method="POST" action="/member/login" role="form" autocomplete="off">
-    <input type="hidden" name="v" value="6KrfncgQe-sdWqPWgLeuw4z-92BOtnvcgu5_0YH1d80weryN3G3dM3pw7gmlSbBu0ylprbcHyJ_JeJwfebu_XAuTihjz4IeuxLCvOB9k4wrzVikTOGA3jIXEY3rx0iVodXndgxDGultE9qli8JF9f6BX">
-        <table summary="Table containing fields to enter login information." border="0" cellpadding="3" cellspacing="0" width="96%">
-            <tbody>                <tr>                    <th scope="row" align="left" width="18%" nowrap="">
-                        <label for="email">My e-mail address is                        </label>
-                    </th>
-                    <td><input name="email_address" id="email" size="30" type="text" value="">
-                    </td>
-                    <td>&nbsp;</td>                </tr>
-                <tr>
-                    <th scope="row" align="left"><label for="password">Amigo Password</label></th>
-                    <td><input name="password" id="password" size="30" type="password">
-                        &nbsp;<img src="https://s1.ticketm.net/tm/en-us/img/sys/common_new/arrow_grey.gif" alt="" align="middle" height="13" width="4">&nbsp;
-                        <span id="forgot_password_text">
-    <a href="#modal_window_one" id="modal_link_one">Forgot password?</a>
-</span><style>
-    #modal_container {
-        width: 430px;
-        overflow: hidden;
-    }
-
-    #modal_overlay {
-        background-color:#000;
-    }
-
-    #modal_overlay.forgot_password {
-        background-color:#000;
-    }
-</style>
-
-<script language="JavaScript">
-
-function populate_email_address() {
-    var email_address = $('email');
-    var pop_container = $('modal_container').select('.lightbox-content');
-
-    if (email_address) {
-        $('fp_email_address').value = email_address.value;
-    }
-
-    if ( Prototype.Browser.IE && $('modal_iframe') ) {
-        $('modal_iframe').setStyle({ opacity: 0 });
-    }
-
-    if( pop_container && pop_container.length > 0 ) {
-        $(pop_container[0]).writeAttribute({
-            role: 'alert',
-            'aria-live': 'assertive',
-            tabindex: '-1'
-        }).focus();
-    }
-    omniTracking.navigation_link('MyTM_Click_Forgot_Password', false);
-};
-</script>
-
-<script type="text/javascript">
-var fp_email_address;
-var fp_request_confirmation_popup;
-
-var fp_poll_timer;
-
-function fp_poll_popup_window() {
-    if(fp_poll_timer) {
-        if(fp_request_confirmation_popup.fp_request_result) {
-            if( fp_request_confirmation_popup.fp_request_result == 'success' ) {
-                Control.Modal.close();
-            }
-
-            clearInterval( fp_poll_timer );
-            fp_poll_timer = 0;
-        }
-    }
-    else {
-        fp_poll_timer = setInterval(fp_poll_popup_window, 500);
-    }
-};
-function request_temporary_password() {    fp_email_address = $('fp_email_address').value.replace("\"", "&quot;");
-
-    fp_request_confirmation_popup=window.open('', '', 'height=350, width=1030, toolbar=no, scrollbars=no');
-    fp_request_confirmation_popup.document.open();
-    var string="";
-    string += "<html><body bgcolor=white>";
-    string += '<form method=post name=send_password_form action="/member/login">';
-    string += '<input type=hidden name=email_address value="' + fp_email_address + '">';
-    string += '<input type=hidden name=parent_window="' + document + '">';
-    string += '<input type="hidden" name="v" value="2J-bZy91hW1C4MdBu4fh_ixgIkumWXKmSUWiI4eaWz29GLXstKfXTns5ulr2mFiM7UrPKpMdY-GAY9y9QaI8SjuiSsPyIGsYeLw9ItpwEWQR2uDz5gE6">';
-    string += "</form>";
-    string += "</body></html>";
-    string += "<" + "script>";
-    string += "document.send_password_form.submit();";
-    string += "</" + "script>";
-    fp_request_confirmation_popup.document.write(string);
-    fp_request_confirmation_popup.document.close();
-    fp_poll_popup_window();
-    return;
-};
-function on_fp_key_press(e) {
-    if ( e.keyCode == 13 ) {
-        request_temporary_password();
-    }
-};
-
-</script>
-
-<script type="text/javascript">
-//<![CDATA[
-function close_forgot_password() {
-    Control.Modal.close();
-    $('modal_link_one').focus()
-    
-    DialogChain.prototype.unblock.bind( DialogChain.prototype )();
-    
-    return false;
-}
-//]]>
-</script>
-
-
-<!-- Lightbox HTML -->
-<!-- end of Lightbox HTML -->
-
-<script type="text/html" id="modal_link_one_template">
-    <a href='#modal_window_one' id='modal_link_one'>Forgot password?</a>
-</script>
-<script type="text/javascript">
-var resetPasswordLinkTimeout;
-function getModalLink() {
-    if(document.readyState == 'complete' || document.readyState == 'interactive'){
-        Control.Modal.load();
-    }    if (Control.Modal.overlay != false) {
-        var template = jQuery('#modal_link_one_template').html();
-        jQuery('#forgot_password_text').html(template);
-        new Control.Modal($('modal_link_one'), {
-            containerClassName: 'lightbox',
-            overlayClassName: 'lightbox',
-            beforeOpen: DialogChain.prototype.block.bind( DialogChain.prototype ),
-            afterOpen: populate_email_address
-        });
-        clearInterval(resetPasswordLinkTimeout);
-    }}
-
-resetPasswordLinkTimeout = setInterval(getModalLink, 500);
-
-</script></td>
-                    <td>&nbsp;</td>
-                </tr>
-            </tbody>
-        </table><!-- Submit -->    <div align="center">
-        <br>
-        <input name="Submit" class="button" value="Sign In" type="submit">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+      </div>
     </div>
-</form>
-<!-- end Submit --></div></div>
-
-
-
-<div id="checkout_delete_cc_dialog" class="lightbox  " style="display:none; width:470px;" tabindex="0" role="alertdialog" aria-labelledby="checkout_delete_cc_dialog_heading"> 
-
-
-
-
-
-
-<div class="lightbox-content"> 
-
-
-
-
-<div class="lightbox-container">
-  
-    <h3 id="checkout_delete_cc_heading">Attention!</h3>
-    <br>
-    <p>Are you sure you want to delete this credit card? If you are selling tickets, deleting a card tied to your ticket listings will delay payment.    </p>
-    <div style="padding-top:16px;text-align:center">
-
-    <input type="button" id="checkout_delete_cc_button" class="save button" value="Delete">
-    <span class="gap20">&nbsp;</span>
-    
-    <input type="button" id="checkout_delete_cc_close_button" class="button-secondary close_box" value="Cancel!">
-
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h2>Sign In Form</h2>
+        <form class="login">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="email-input" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="password-input" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-default">Sign In</button>
+        </form>
+        <br />
+        <p>Or create an account <a href="/">here</a></p>
+      </div>
     </div>
-    
-</div>
+  </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/login.js"></script>
 
-
-
-</div>
-
-
-
-
-</div>
-
-
-
-    
-<script type="text/javascript">
-window.onload = function() {
-    if (TM.Ads && typeof TM.Ads.iframeAssets != "undefined" && TM.Ads.iframeAssets.length > 0){
-       jQuery.each(TM.Ads.iframeAssets, function(i,k){
-           if( jQuery( k.name ).length > 0 && k.src ){
-              if ((this.name) == "#edp_leaderboard"){
-                  this.src = appendTransID(this.src, true);
-              }
-              ( function(o){
-                   setTimeout( function() { 
-                       jQuery( o.name ).attr("src", o.src ) 
-                   } , 200 );
-               }(k) )
-           }
-       })
-    }
-}
-
-</script>                    <div class="clear"></div>
-                        </div>
-                </div>                                <div id="bottomPlacement" class="top-selling" style="display:none;"></div>
-            </div>
-	
 </body>
+
 </html>
