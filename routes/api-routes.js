@@ -13,16 +13,33 @@ var db = require("../models");
 module.exports = function(app) {
 
   // POST route for saving a new post
+  // code i copied from a solution and was modeling our code from
   app.post("/api/posts", function(req, res) {
     db.FavArtist.create(req.body).then(function(dbFavArtist) {
       res.json(dbFavArtist);
     });
   });
+  // ====================================================
+  // trying to get findorcreate to work
 
+  // User
+  // .findOrCreate({
+  // 	where: {
+  // 		username: 'sdepold'
+  // 	}, 
+  // 	defaults: {
+  // 		job: 'Technical Lead JavaScript'
+  // 	}
+  // }).spread((user, created) => {
+  //   console.log(user.get({
+  //     plain: true
+  //   }))
+  //   console.log(created)
 
+// ==============================================
   app.get("/api/artist", function(req, res) {
   	console.log(req.query.artist);
-  	db.FavArtist.findOne({
+  	db.FavArtist.findOrCreate({
   		where: {
   			fav_artist: req.query.artist
   		}

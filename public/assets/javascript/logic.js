@@ -1,4 +1,6 @@
-$(document).ready(function(){  
+$(document).ready(function(){ 
+
+
 
 
 // DISPLAYS CURRENT TIME ===========================================================
@@ -118,8 +120,8 @@ $.ajax({
         artist: queryTerm
       }
     }).done(function(response) {
-      console.log(response); 
-      });  
+      console.log(response);
+    });
       // on response console.log
   
       
