@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 
-	<meta charset="UTF-8">
-	<title>AMIGOS Concert Page</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">	
+  <meta charset="UTF-8">
+  <title>Amigos Concert Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
 
   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     
@@ -28,15 +28,21 @@
   <!-- <script src="http://momentjs.com/downloads/moment.js"></script>   -->
   <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     
+<div class="main-container">
 
 <!-- Amigos Navbar at Top-->
+<div class="nav-container">
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">Amigos</a> 
+        <a class="navbar-brand" href="#">Amigos</a>        
+        <a class="navbar-brand" href="#">Sign In</a>
+        <a class="navbar-brand" href="#">Create Account</a> 
+        <a class="navbar-brand" href="#">Add to Favorites</a>        
       </div>  
     </div>
   </nav>
+</div>
 
   <style>
   .bg-grey {
@@ -46,20 +52,25 @@
 <!-- End of Navbar section -->
 
 
-<!-- <div class="container"> -->
+<div class="container">
 
       <!-- Jumbotron -->
   <div class="jumbotron bg">
-    <h2 class="text-center">AMIGOS ARTIST & CONCERT SEARCH</h2>        
-<!--         <h4 class="text-center">Current Time: <span id="current-time"></span></h4>     -->
+    <h2 class="text-center"><strong>AMIGOS CONCERT SEARCH</strong></h2>        
+        <!-- <h4 class="text-center">Current Time: <span id="current-time"></span></h4>     -->
+
   </div>
+</div>
 
 <!-- Search for artists/events -->
+  <div class="row">
+    <h4 class="text-center"><strong>Search for concerts by artist or city</strong></h4>
+  </div>
   <div class="row">
     <div class="text-center">
       <form class="navbar-form navbar-center" id="add-favorites-form" role="search">
           <div class="form-group">
-            <input type="text" id="queryTerm" class="form-control" placeholder="Search for artists / events">
+            <input type="text" id="queryTerm" class="form-control" placeholder="Search for concerts">
           </div>
           <button type="submit" class="btn btn-success" id="search-events-btn"><i class="fa fa-search fa-lg" aria-hidden="true"></i></button>      
       </form>
@@ -93,17 +104,11 @@
         </table>
       </div>
 
-
     </div>
 
   </div>
 
-  <!-- </div> -->
-
-<div id="gifsArea" class="col-md-5"></div> 
-     
-
-
+<div id="gifsArea" class="col-md-5"></div>
 
 
 
@@ -127,8 +132,11 @@
 
   
   <footer>
-    <h5>&copy 2017 Amigos</h5>
+    <h5>&copy 2017 Three Amigos Entertainment</h5>
   </footer>
+
+</div>
+
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
