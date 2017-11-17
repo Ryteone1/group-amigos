@@ -6,6 +6,9 @@
 // =============================================================
 var path = require("path");
 
+// Requiring our custom middleware for checking if a user is logged in
+var isAuthenticated = require("../config/middleware/isAuthenticated");
+
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -30,6 +33,12 @@ module.exports = function(app) {
   // add_favorites route loads add_favorites.html
   app.get("/add_favorites", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/add_favorites.html"));
+  });
+
+  // Here we've add our isAuthenticated middleware to this route.
+  // If a user who is not logged in tries to access this route they will be redirected to the signup page
+  app.get("/add_favorites", isAuthenticated, function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/create_account.html"));
   });
 
 };
