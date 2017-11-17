@@ -1,72 +1,26 @@
 $(document).ready(function(){
-
-  // $.post("/api/new", )
+  
+ 
    $.get("/api/trending", function(data) {
       console.log(data);
 
       for (var i = 0; i < data.length; i++) {
 
         var artistName = data[i].fav_artist;
+        
+        artistName = artistName.toLowerCase().replace(/\b[a-z]/g, function(letter) {
+            return letter.toUpperCase();
+          });
+      
 
-        artistName = artistName.replace(/\s+/g, "").toLowerCase();
-        // artistName = artistName.toLowerCase().replace(/\b[a-z]/g, function(letter) {
-        //     return letter.toUpperCase();
-        //   });
-      }
+        var row = $("<div>");
+        row.addClass("trending");
 
-      var queryURLGiphy = "https://api.giphy.com/v1/gifs/search?q=" + artistName + "&api_key=55fa83da04e04a38b28a997d9d79f784&limit=1";
+        row.append("<p>" + artistName + "</p>");
 
-    $.ajax({
-      url: queryURLGiphy,
-      method: "GET"
-    })
-    .done(function(giphyData) {      
-      var results = giphyData.data;
-      console.log(giphyData);
-      console.log(queryURLGiphy);
+        $("#trending-now-area").prepend(row); 
 
-      $("#trending-now-area").empty();
-
-      // var carouselA = $("<div class='carousel'>");
-
-          for (var j = 0; j < results.length; j++) {
-
-            if (results[j].rating !== "r" && results[j].rating !== "pg-13") {
-      // // var gifDiv = $("<a class='carousel-item' href='"#" + j + ""'>");
-            var gifDiv = $("<div>");
-            var gifImage = results[j].images.fixed_height_small.url;
-            var gifs = $("<img>").attr("src", gifImage);
-
-            $("#trending-now-area").append(gifs);
-
-  //      <div class="carousel">
-  //   <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/250/250/nature/1"></a>
-  //   <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/250/250/nature/2"></a>
-  //   <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/250/250/nature/3"></a>
-  //   <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/250/250/nature/4"></a>
-  //   <a class="carousel-item" href="#five!"><img src="https://lorempixel.com/250/250/nature/5"></a>
-  // </div>     
-      // carouselA.append(gifs); 
-            }
-          }
-      // $(".panel-primary").prepend(carouselA);
-      // $('.carousel').carousel(); 
-    }); 
-
-
-
-
-
-
-
-
-      // var row = $("<div>");
-      // row.addClass("trending");
-
-      // row.append("<p>" + artistName + "</p>");
-
-      // $("#trending-now-area").prepend(row); 
-    
+      }    
 
 });
   
