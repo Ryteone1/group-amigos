@@ -39,12 +39,24 @@ module.exports = function(app) {
 // ==============================================
   app.get("/api/artist", function(req, res) {
   	console.log(req.query.artist);
-  	db.FavArtist.findOrCreate({
+  	db.FavArtist.findOne({
   		where: {
   			fav_artist: req.query.artist
-  		}
+  		}	
+
   	}).then(function(artist) {
+  		console.log(artist);
   		// check if artist === null
+  		if (artist === null) {
+			db.FavArtist.create({				
+				fav_artist: req.query.artist,
+				search_hits: 1				
+			}).then(function(artist) {
+				console.log(artist);
+	  			res.json(artist);	
+			});
+		}
+
   		console.log("after db search: ");
   		db.FavArtist.update({
   			search_hits: artist.search_hits+1
@@ -56,7 +68,9 @@ module.exports = function(app) {
   		.then(function(artist) {
   			console.log("update success");
   			console.log(artist);
-  			res.json(artist);
+  			res.json(artist.get ({
+  				plain: true
+  			}));
   		})
   		.catch(function(err) {
   			console.log(err);
