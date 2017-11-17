@@ -3,11 +3,11 @@ module.exports = function(sequelize, DataTypes) {
   var FavArtist = sequelize.define("FavArtist", {
     fav_artist: {
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: false
     },
     search_hits: {
       type: DataTypes.INTEGER,
-      defaultValue: 0
+      defaultValue: 1
     }    
       
   });
