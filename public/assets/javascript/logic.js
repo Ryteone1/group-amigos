@@ -8,8 +8,7 @@ $(document).ready(function(){
 
         var artistName = data[i].fav_artist;
 
-        artistName = artistName.val().trim();
-
+        artistName = artistName.replace(/\s+/g, "").toLowerCase();
         // artistName = artistName.toLowerCase().replace(/\b[a-z]/g, function(letter) {
         //     return letter.toUpperCase();
         //   });
