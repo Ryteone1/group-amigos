@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  
+
  
    $.get("/api/trending", function(data) {
       console.log(data);
@@ -18,7 +18,7 @@ $(document).ready(function(){
 
         row.append("<p>" + artistName + "</p>");
 
-        $("#trending-now-area").prepend(row); 
+        $("#trending-now-area").append(row); 
 
       }    
 
