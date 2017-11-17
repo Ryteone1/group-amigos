@@ -19,22 +19,7 @@ module.exports = function(app) {
       res.json(dbFavArtist);
     });
   });
-  // ====================================================
-  // trying to get findorcreate to work
-
-  // User
-  // .findOrCreate({
-  // 	where: {
-  // 		username: 'sdepold'
-  // 	}, 
-  // 	defaults: {
-  // 		job: 'Technical Lead JavaScript'
-  // 	}
-  // }).spread((user, created) => {
-  //   console.log(user.get({
-  //     plain: true
-  //   }))
-  //   console.log(created)
+  
 
 // ==============================================
   app.get("/api/artist", function(req, res) {
@@ -82,7 +67,7 @@ module.exports = function(app) {
 
 
 
-	app.get("/api/trending",function(req,res) {
+	app.get("/api/trending", function(req,res) {
 		db.FavArtist.findAll({
 			order: [["search_hits", "DESC"]],
 			limit: 3

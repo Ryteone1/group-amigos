@@ -1,8 +1,10 @@
-$(document).ready(function(){ 
+$(document).ready(function(){
 
-
-
-
+  // $.post("/api/new", )
+   $.get("/api/trending", function(data) {
+  console.log(data);
+});
+  
 // DISPLAYS CURRENT TIME ===========================================================
 
   // var currentTime = moment();
