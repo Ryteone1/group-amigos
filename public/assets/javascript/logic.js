@@ -21,8 +21,8 @@ $(document).ready(function(){
 
         var trendingPics = $("<img>").attr("src", placeholderImg);
 
-        $("#trending-now-area").append(row); 
-        $("#trending-now-area").append(trendingPics); 
+        $("#trending-now-area").append(row, trendingPics); 
+        // $("#trending-now-area").append(trendingPics); 
 
       }    
 
