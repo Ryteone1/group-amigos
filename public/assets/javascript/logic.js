@@ -13,15 +13,15 @@ $(document).ready(function(){
           });
       
 
-        var row = $("<div>");
-        row.addClass("trending");
+        // var row = $("<div>");
+        // row.addClass("trending");
 
-        row.append("<p>" + artistName + "</p>");
+        // row.append("<p>" + artistName + "</p>");
         var placeholderImg = "http://placeimg.com/640/480/any";
 
         var trendingPics = $("<img>").attr("src", placeholderImg);
 
-        $("#trending-now-area").append(row, trendingPics); 
+        $("#trending-now-area").append(artistName, trendingPics); 
         // $("#trending-now-area").append(trendingPics); 
 
       }    
