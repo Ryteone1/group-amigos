@@ -2,7 +2,18 @@ $(document).ready(function(){
 
   // $.post("/api/new", )
    $.get("/api/trending", function(data) {
-  console.log(data);
+      console.log(data);
+
+      for (var i = 0; i < data.length; i++) {
+
+        var row = $("<div>");
+        row.addClass("trending");
+
+        row.append("<p>" + data[i].fav_artist + "</p>");
+
+        $("#trending-now-area").prepend(row); 
+      }
+
 });
   
 // DISPLAYS CURRENT TIME ===========================================================
