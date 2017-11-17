@@ -34,6 +34,18 @@
     font-size: 45px;
 }
 
+#add-favorites-form {
+    width: 60%
+}
+
+
+
+.trending-pics {
+    width: 370px;
+    height: 152px;
+}
+
+
 img {
     width: 200px;
 }

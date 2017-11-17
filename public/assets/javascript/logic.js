@@ -6,25 +6,39 @@ $(document).ready(function(){
 
       for (var i = 0; i < data.length; i++) {
 
-        var artistName = data[i].fav_artist;
-        
-        artistName = artistName.toLowerCase().replace(/\b[a-z]/g, function(letter) {
+        var artistName = data[i].fav_artist.toLowerCase().replace(/\b[a-z]/g, function(letter) {
             return letter.toUpperCase();
           });
-      
+      }
 
-        // var row = $("<div>");
-        // row.addClass("trending");
+        var row = $("<div>");
+        row.addClass("trending");
 
         // row.append("<p>" + artistName + "</p>");
-        var placeholderImg = "http://placeimg.com/370/152/people";
+        row.append(data[0].fav_artist + data[1].fav_artist + data[2].fav_artist);
 
-        var trendingPics = $("<img>").attr("src", placeholderImg);
+        $("#trending-now-area").append(row); 
 
-        $("#trending-now-area").append(artistName, trendingPics); 
-        // $("#trending-now-area").append(trendingPics); 
+      
+             
 
-      }    
+        var image1 = "http://placeimg.com/370/152/people";
+        var image2 = "http://placeimg.com/370/152/animals";
+        var image3 = "http://placeimg.com/370/152/nature";
+
+        var trendingImages = [image1, image2, image3];
+
+        for (var j = 0; j < trendingImages.length; j++) {
+          var trendingPic = trendingImages[j];
+
+        trendingPic = $("<img>").attr("src", trendingImages[j]);
+        trendingPic.addClass("trending-pics");
+
+        // $("#trending-now-area").append(artistName, trendingPics); 
+        $("#trending-now-area").append(trendingPic); 
+      }
+
+       
 
 });
   
