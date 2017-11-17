@@ -6,10 +6,16 @@ $(document).ready(function(){
 
       for (var i = 0; i < data.length; i++) {
 
+        var artistName = data[i].fav_artist;
+
+        artistName = artistName.toLowerCase().replace(/\b[a-z]/g, function(letter) {
+          return letter.toUpperCase();
+          });
+
         var row = $("<div>");
         row.addClass("trending");
 
-        row.append("<p>" + data[i].fav_artist + "</p>");
+        row.append("<p>" + artistName + "</p>");
 
         $("#trending-now-area").prepend(row); 
       }
