@@ -2,14 +2,64 @@
 <html lang="en">
 
 <head>
-  <title>Amigos Create Account</title>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  <link href="stylesheets/style.css" rel="stylesheet">
+  <title>Amigos Create Account</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
+
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <script src="https://use.fontawesome.com/84200971f5.js"></script>
+
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+ 
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+
 </head>
 
 <body>
+
+<!-- ====== Begin nav bar and jumbotron area ======= -->
+<div class="main-container">  
+
+  <div class="nav-container">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="index.html">Amigos</a>        
+        <a class="navbar-brand" href="sign_in.html">Sign In</a>
+        <a class="navbar-brand" href="create_account.html">Create Account</a> 
+        <a class="navbar-brand" href="add_favorites.html">Add to Favorites</a>        
+      </div>  
+    </div>
+  </nav>
+</div>
+
+  <style>
+  .bg-grey {
+      background-color: #71DFF8;
+  }
+  </style>  
+<!-- End of Navbar section -->
+
+
+<div class="container">
+
+      <!-- Jumbotron -->
+  <div class="jumbotron bg">
+    <h2 class="text-center"><strong>AMIGOS CONCERT SEARCH</strong></h2>        
+        <!-- <h4 class="text-center">Current Time: <span id="current-time"></span></h4>     -->
+
+  </div>
+</div>
+<!-- ========== End of nav bar and jumbotron area ========== -->
+
+<!-- ========== Begin create account form area ========== -->
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -36,10 +86,14 @@
           <button type="submit" class="btn btn-default">Create Account</button>
         </form>
         <br />
-        <p>Or log in <a href="/login">here</a></p>
+        <p>Or sign in <a href="sign_in.html">here</a></p>
       </div>
     </div>
   </div>
+
+  <footer>
+    <h5>&copy 2017 Three Amigos Entertainment</h5>
+  </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/signup.js"></script>

@@ -3,12 +3,12 @@
 }
 
 .main-container {
-	width: 100%;
-	background: #ddd;
+	  width: 100%;
+	  background: #ddd;
 }
 
 .navbar-brand {
-	display: inline-block;
+	  display: inline-block;
     padding: 15px;
     margin: 15px;
     line-height: 10px;
@@ -20,32 +20,31 @@
 }
 
 .navbar-header {
-	max-height: 25px;
+	  max-height: 25px;
 } 
 
 .bg {
-  background: url('../images/threeback.jpg') no-repeat center center;
-  background-size: 100% 120%;
-  border: 3px solid #000;
+    background: url('../images/threeback.jpg') no-repeat center center;
+    background-size: 100% 120%;
+    border: 3px solid #000;
 }
 
 .jumbotron h2 {
-	color: #000;
-	font-size: 45px;
+	  color: #000;
+	  font-size: 45px;
 }
 
 img {
-	width: 200px;
+	  width: 200px;
 }
 
 .panel-primary {
-	display: none;
+	  display: none;
 }
 
-footer {
-	
-	width: 100%;
-	margin-top: 150px;
+footer {	
+	  width: 100%;
+	  margin-top: 150px;
     padding: 7px 0;     
     font-size: 12px;
     color: #ccc;
