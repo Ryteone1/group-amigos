@@ -28,5 +28,10 @@
   },
   "devDependencies": {
     "handlebars-helper-css": "^0.1.0"
+  },
+  "production": {
+    "use_env_variable": "JAWSDB_URL",
+    "dialect": "mysql"
   }
+
 }
