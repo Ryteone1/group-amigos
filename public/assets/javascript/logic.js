@@ -17,8 +17,12 @@ $(document).ready(function(){
         row.addClass("trending");
 
         row.append("<p>" + artistName + "</p>");
+        var placeholderImg = "http://placeimg.com/640/480/any";
+
+        var trendingPics = $("<img>").attr("src", placeholderImg);
 
         $("#trending-now-area").append(row); 
+        $("#trending-now-area").append(trendingPics); 
 
       }    
 
