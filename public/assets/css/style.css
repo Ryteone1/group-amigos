@@ -33,7 +33,13 @@
     color: #000;
     font-size: 45px;
     margin: 0px;
+    position: relative;
+    bottom: 15px;
     
+}
+
+#h2-trending-now {
+    font-size: 30px;
 }
 
 #background-container {
@@ -42,7 +48,7 @@
 }
 
 #caption {
-    font-size: 15px;
+    font-size: 20px;
 }
 
 #bold-heading {
