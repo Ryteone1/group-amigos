@@ -10,13 +10,14 @@
 .navbar-brand {
 	display: inline-block;
     padding: 15px;
-    margin: 15px;
+    margin: 3px;
     line-height: 10px;
     font-size: 12px;
     font-weight: bold;
     color: #fff;
     text-decoration: none;
-    border-left: 1px solid #efefef;
+    /*border-left: 1px solid #efefef;
+    border-right: 1px solid #efefef;*/
 }
 
 .navbar-header {
