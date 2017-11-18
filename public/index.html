@@ -62,21 +62,19 @@
 </div>
 
 <!-- Search for artists/events -->
-  <div class="row text-center">
+  <div class="row">
     <div class="col-md-4 col-md-offset-4">
-      <form id="add-favorites-form" role="search">
+      <form class="navbar-form navbar-center" id="add-favorites-form" role="search">
           <div class="form-group">
-            <input type="text" id="queryTerm" class="form-control" placeholder="Search for artists, concerts or events">
-            
-          </div>              
+            <input type="text" id="queryTerm" class="form-control" placeholder="Search for artists, concerts or events">     
+          </div> 
+           <button type="submit" class="btn btn-success" id="search-events-btn"><i class="fa fa-search fa-lg" aria-hidden="true"></i></button>               
       </form>
     </div>
-    <button type="submit" class="btn btn-success" id="search-events-btn"><i class="fa fa-search fa-lg" aria-hidden="true"></i></button>  
+   
   </div>
 <!-- End of Search for artists/events -->
-  <br>
-
-
+  <!-- <br> -->
 <!-- Trending Now Area -->
 <div class="container">
   <h2>Trending Now</h2>
