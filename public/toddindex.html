@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <title>Amigos Concert & Event Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
+
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <script src="https://use.fontawesome.com/84200971f5.js"></script>
+
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+ 
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Moment.js Reference -->
+  <!-- <script src="http://momentjs.com/downloads/moment.js"></script>   -->
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    
+<div class="main-container">
+
+<!-- Amigos Navbar at Top-->
+<div class="nav-container">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="index.html">Home</a>        
+        <a class="navbar-brand" href="sign_in.html">Sign In</a>
+        <a class="navbar-brand" href="create_account.html">Create Account</a> 
+        <a class="navbar-brand" href="add_favorites.html">Add to Favorites</a>        
+      </div>  
+    </div>
+  </nav>
+</div>
+
+  <style>
+  .bg-grey {
+      background-color: #71DFF8;
+  }
+  </style>  
+<!-- End of Navbar section -->
+
+
+<div class="jumbo-container">
+
+      <!-- Jumbotron -->
+  <div class="jumbotron bg">
+    <h2 class="text-center"><strong>AMIGOS CONCERT & EVENT SEARCH</strong></h2>        
+        <!-- <h4 class="text-center">Current Time: <span id="current-time"></span></h4>     -->
+
+  </div>
+</div>
+
+<!-- Search for artists/events -->
+  <div class="row text-center">
+    <div class="col-md-4 col-md-offset-4">
+      <form id="add-favorites-form" role="search">
+          <div class="form-group">
+            <input type="text" id="queryTerm" class="form-control" placeholder="Search for artists, concerts or events">
+            
+          </div>              
+      </form>
+    </div>
+    <button type="submit" class="btn btn-success" id="search-events-btn"><i class="fa fa-search fa-lg" aria-hidden="true"></i></button>  
+  </div>
+<!-- End of Search for artists/events -->
+  <br>
+
+
+<!-- Trending Now Area -->
+<div class="container">
+  <h2>Trending Now</h2>
+  <!-- <p>The .thumbnail class can be used to display an image gallery.</p>
+  <p>The .caption class adds proper padding and a dark grey color to text inside thumbnails.</p>
+  <p>Click on the images to enlarge them.</p> -->
+  <div class="row">
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="assets/images/ed_sheeran.gif" target="_blank">
+          <img src="assets/images/ed_sheeran.gif" alt="Lights" style="width:100%">
+          <div class="caption">
+            <p>See events / Buy Tickets</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="assets/images/sam_smith.gif" target="_blank">
+          <img src="assets/images/sam_smith.gif" alt="Nature" style="width:100%">
+          <div class="caption">
+            <p>Lorem ipsum donec id elit non mi porta gravida at</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="assets/images/ucf_football.gif" target="_blank">
+          <img src="assets/images/ucf_football.gif" alt="Fjords" style="width:100%">
+          <div class="caption">
+            <p>Lorem ipsum donec id elit non mi porta gravida at</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End of Trending Now Area --> 
+
+
+  <div class="col-md-7">
+    <div class="panel panel-primary">
+
+      <div class="panel-heading">
+        <h3 class="panel-title"><strong>Event List</strong></h3>
+      </div>
+
+
+      <div class="panel-body">
+        <table class="table table-hover" id="event-table">
+          <thead>
+            <tr>
+              <th>Event Name</th>
+              <th>Location</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Url</th>                    
+            </tr>
+          </thead>
+            <tbody></tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+
+<div id="gifsArea" class="col-md-5"></div>
+
+
+
+<!-- ================================SPOTIFY SEARCH AREA================================== -->
+<!-- <div class="container">
+    <h1>Search for an Artist</h1>
+    <p>Type an artist name and click on "Search". Then, click on any album from the results to play 30 seconds of its first track.</p>
+    <form id="search-form">
+        <input type="text" id="query" value="" class="form-control" placeholder="Type an Artist Name"/>
+        <input type="submit" id="search" class="btn btn-primary" value="Search" />
+    </form>
+    <div id="results"></div>
+</div>
+<script id="results-template" type="text/x-handlebars-template">
+    {{#each albums.items}}
+    <div style="background-image:url({{images.0.url}})" data-album-id="{{id}}" class="cover"></div>
+    {{/each}}
+</script> -->
+
+<!-- ==============================END OF SPOTIFY API SEARCH AREA============================= -->
+
+  
+  <footer>
+    <h5>&copy 2017 Three Amigos Entertainment</h5>
+  </footer>
+
+</div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript" src="assets/javascript/logic.js"></script>
+
+</body>
+</html>
