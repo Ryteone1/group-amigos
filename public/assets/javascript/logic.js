@@ -59,7 +59,9 @@ $(document).ready(function(){
         event.preventDefault();
 
 //  CODE BELOW USES JQUERY TO SELECT THE DIV WITH CLASS NAME PANEL-PRIMARY AND CHANGE THE DISPLAY ATTR FROM NONE TO BLOCK
+
   $(".panel-primary").attr("style", "display: block;");
+  $("#trending-area").attr("style", "display: none;");
 
         queryTerm = $("#queryTerm").val().trim();
         console.log(queryTerm);

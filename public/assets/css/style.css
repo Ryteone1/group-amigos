@@ -32,11 +32,26 @@
 .jumbotron h2 {
     color: #000;
     font-size: 45px;
+    margin: 0px;
+    
 }
 
-/*#search-events-btn {
+#background-container {
+    position: relative;
+    bottom: 10px;
+}
+
+#caption {
+    font-size: 15px;
+}
+
+#bold-heading {
+
+}
+
+#search-events-btn {
     float: left;
-}*/
+}
 
 /*#add-favorites-form {
     width: 60%
