@@ -1,3 +1,4 @@
+
 // DEVELOPMENT CODE ========================
 module.exports = function(sequelize, DataTypes) {
   var FavArtist = sequelize.define("FavArtist", {
@@ -14,5 +15,3 @@ module.exports = function(sequelize, DataTypes) {
 
   return FavArtist;
 };
-
-
