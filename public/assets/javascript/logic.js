@@ -17,9 +17,7 @@ $(document).ready(function(){
         // row.append("<p>" + artistName + "</p>");
         row.append(data[0].fav_artist + data[1].fav_artist + data[2].fav_artist);
 
-        $("#trending-now-area").append(row); 
-
-      
+        $("#trending-now-area").append(row);              
              
 
         var image1 = "http://placeimg.com/370/152/people";
