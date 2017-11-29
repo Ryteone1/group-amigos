@@ -1,6 +1,6 @@
 # Amigos Artist & Concert Search
 
-## *Search events for your favorite artists and sports teams.  Event search results are brought to you by Ticketmaster's powerful Api, while simultaneously, Giphy's Api returns some very entertaining gifs of your favorite artists and sports teams, for your viewing pleasure!  Enjoy!*
+## *A web app that utilizes Ticketmaster’s powerful API to allow users to search upcoming events for their favorite music artists and sports teams.  A unique feature of the app, is that it simultaneously utilizes the fantastic Giphy Api to return very fun and entertaining gifs for your viewing pleasure!  Enjoy!*
 
 <img src='public/assets/images/screenshot.gif'>
 
